@@ -1,3 +1,3 @@
 # ZGINX 
 
-a testing lab
+a testing lab for github actions
