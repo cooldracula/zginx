@@ -32,8 +32,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=ref,event=branch
+            type=schedule,event=branch,pattern={{date 'YYYYMMDD'}}
+            type=ref,event=branch,suffix={{sha}}
             type=ref,event=tag
             type=ref,event=pr
             type=raw,event=tag,value=stable
