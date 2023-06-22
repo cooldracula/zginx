@@ -32,11 +32,11 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule
+            type=edge,branch=canon
             type=ref,event=branch
             type=ref,event=tag
             type=ref,event=pr
-            type=match,pattern=.*,value=stable
+            type=match,event=tag,pattern=[0-9]{4}-[0-9]{2}-[0-9]{2},value=stable
 
       - name: Build and push Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
