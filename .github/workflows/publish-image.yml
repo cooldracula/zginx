@@ -32,7 +32,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=edge,branch=canon
+            type=sha,event=branch,format=short
             type=ref,event=branch
             type=ref,event=tag
             type=ref,event=pr
